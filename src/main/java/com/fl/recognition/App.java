@@ -1,10 +1,8 @@
-package com.fl.test;
+package com.fl.recognition;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioInputStream;
@@ -14,14 +12,21 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 import com.bitsinharmony.recognito.MatchResult;
 import com.bitsinharmony.recognito.Recognito;
 import com.bitsinharmony.recognito.VoicePrint;
+import com.fl.recognition.jni.HelloJNI;
 
 /**
  * Hello world!
  *
  */
 public class App {
+	
+	
+	
 	public static void main(String[] args)
 			throws UnsupportedAudioFileException, IOException {
+		
+		// invoke the native method
+		new HelloJNI().sayHello();
 
 		File Obama0 = new File(System.getProperty("user.dir") + File.separator
 				+ "src" + File.separator + "Barack_Obama0.wav");
